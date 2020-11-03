@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 	let city = req.query.city;
 	var request = require('request');
 	request(
-		`https://samples.openweathermap.org/data/2.5/forecast?q=${city}&appid=9fe82bbfcc6eab5b80316db95dc145cc
+		`https://samples.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.api}
         `,
 		function(error, response, body) {
 			let data = JSON.parse(body);
